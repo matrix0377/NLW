@@ -14,15 +14,11 @@ function onScroll() {
 
 function openMenu() {
     document.body.classList.add('menu-expanded')
-    if openMenu() {
-        /* esconder o botão de menu --resolver isso*/
-        document.body.button.open-menu.hidden
-        
-    }
-    
 }
 
 function closeMenu() {
     document.body.classList.remove('menu-expanded')
 }
+
+
 
