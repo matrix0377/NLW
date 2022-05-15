@@ -1,15 +1,11 @@
-/* ======== GERAL ===================================*/
-
+/*=== GERAL =================================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    /* verificar borda de elementos -->>> border: 1px solid red; */
 }
 
 :root {
-
     --primary-color: hsl(170, 100%, 26%);
     --headline: hsl(210, 11%, 15%);
     --paragraph: hsl(210, 9%, 31%);
@@ -17,39 +13,40 @@
     --brand-beige: hsl(39, 100%, 97%);
     --brand-light: hsl(148, 23%, 89%);
 
-    --bg-light: hsl(180, 14%, 97%)
+    --bg-light: hsl(180, 14%, 97%);
 
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: 62.5%;
+    /* 1rem = 10px */
 
     --nav-height: 7.2rem;
 }
 
 html {
-    /* chrome://flags/#smooth-scolling */
+    /* chrome://flags/#smooth-scrolling */
     scroll-behavior: smooth;
 }
 
-
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
 }
-    
+
 body {
-       font-family: 'DM Sans';
-       font-size: 1.6rem;
+    font-family: 'DM Sans';
+    font-size: 1.6rem;
 
-       text-align: center;
+    text-align: center;
 
-       overflow: overlay;
+    overflow: overlay;
 
-       background-color: var(--bg-light);
+    background-color: var(--bg-light);
 }
 
 .wrapper {
     width: 37.5rem;
     margin-inline: auto;
-    padding: 2.4rem;
+    padding-inline: 2.4rem;
 }
 
 ul {
@@ -81,8 +78,6 @@ section header h2 {
     line-height: 3.9rem;
 
     color: var(--headline);
-
-    margin-bottom: 6rem;
 }
 
 section header h1 {
@@ -101,15 +96,11 @@ section .content p {
     color: var(--paragraph);
 }
 
-
-
-/* ====== NAVIGATION ======================================*/
-
+/*=== NAVIGATION =================================*/
 nav {
     display: flex;
-    height: var(--nav-height);
 
-    /* padding: 1.6rem 2.4rem;  */
+    height: var(--nav-height);
 
     position: fixed;
     top: 0;
@@ -123,7 +114,6 @@ nav .wrapper {
     align-items: center;
     justify-content: space-between;
 }
-
 
 nav.scroll {
     background: var(--primary-color);
@@ -143,18 +133,19 @@ nav button {
     cursor: pointer;
 }
 
-/* ====== MENU-EXPANDED ======================================*/
 
+/*=== MENU-EXPANDED =================================*/
 body.menu-expanded {
     overflow: hidden;
 }
 
 body.menu-expanded> :not(nav) {
-    display: none;
+    visibility: hidden;
 }
 
 .menu,
-.close-menu {
+.close-menu,
+body.menu-expanded .open-menu {
     opacity: 0;
     visibility: hidden;
 }
@@ -182,6 +173,7 @@ body.menu-expanded .menu {
 
     transition: transform 300ms;
     transform: translateY(0);
+
 }
 
 .menu ul:nth-child(1) {
@@ -194,8 +186,6 @@ body.menu-expanded .menu {
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 3.1rem;
-    color: white;
-    text-decoration: none;
 }
 
 .menu ul li a {
@@ -204,7 +194,7 @@ body.menu-expanded .menu {
 }
 
 .menu .button {
-    background: #FFFFFF;
+    background: white;
     border-radius: 4rem;
     font-weight: 700;
     font-size: 1.8rem;
@@ -219,7 +209,6 @@ body.menu-expanded .menu {
 
     margin-top: 4.8rem;
     margin-bottom: 8rem;
-
 }
 
 .social-links {
@@ -239,13 +228,18 @@ body.menu-expanded .logo path {
     fill: white;
 }
 
-/* ====== HOME ======================================*/
+body.menu-expanded button path {
+    stroke: white;
+}
 
-home {
+
+
+/*=== #HOME =================================*/
+#home {
     padding-top: calc(4.1rem + var(--nav-height));
 }
 
-home::before {
+#home::before {
     content: '';
     width: 100%;
     height: calc(108rem + var(--nav-height));
@@ -258,13 +252,11 @@ home::before {
     z-index: -1;
 }
 
-
 #home p {
     font-size: 1.8rem;
     line-height: 150%;
     font-weight: 400;
     color: var(--paragraph);
-    /* border: 1px solid red; --->>> Use para visualizar um alinhamento */
 
     margin-bottom: 3.2rem;
 }
@@ -280,15 +272,15 @@ home::before {
     height: 6.2rem;
     width: 26.3rem;
 
-    color: #ffff;
-    text-transform: uppercase;
+    color: white;
     font-size: 1.4rem;
     font-weight: 700;
+    text-transform: uppercase;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.6rem;  /*espaço do botão e o elemento */
+    gap: 1.6rem;
 
     margin-right: auto;
     margin-left: auto;
@@ -304,7 +296,7 @@ home::before {
 #home .stats {
     width: 32.7rem;
     padding-block: 4rem;
-    margin-inline: auto; /* mesmo que colocar margin-right, margin-left: */
+    margin-inline: auto;
 
     background-color: var(--brand-beige);
     border: 1px solid var(--brand-light);
@@ -315,7 +307,6 @@ home::before {
     justify-content: center;
     gap: 6rem;
 }
-
 
 #home .stat h3 {
     font-size: 4.8rem;
@@ -332,15 +323,12 @@ home::before {
     line-height: 150%;
 }
 
-
-/* ====== SERVICES ======================================*/
-
-#services h2 {
+/*=== SERVICES =================================*/
+#services header h2 {
     margin-bottom: 6rem;
 }
 
-
-#services cards {
+#services .cards {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
@@ -353,26 +341,24 @@ home::before {
     background: white;
 
     border: 1px solid var(--brand-light);
-    border-radius: .6rem;
+    border-radius: 0.6rem;
 }
 
 #services .card h3 {
     margin-block: 1.6rem;
 }
 
-/* ====== ABOUT ======================================*/
-
+/*=== ABOUT =================================*/
 #about {
     text-align: left;
-    background: var(--brand-beige)
+    background-color: var(--brand-beige);
 }
 
-#about h2 {
+#about header h2 {
     margin-bottom: 2.4rem;
 }
 
 #about .content p {
     margin-top: 2.4rem;
     margin-bottom: 6rem;
-
 }

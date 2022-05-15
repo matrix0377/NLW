@@ -1,36 +1,30 @@
-// Continur o video em 1:43:21 -->> Stage 2
-
-// String (textos)
-// Number (numeros)
-// Boolean (True | False)
-
 function onScroll() {
-    if (scrollY > 0) {
-        navigation.classList.add('scroll')
-    } else {
-        navigation.classList.remove('scroll')
-    }
+  if (scrollY > 0) {
+    navigation.classList.add('scroll')
+  } else {
+    navigation.classList.remove('scroll')
+  }
 }
 
 function openMenu() {
-    document.body.classList.add('menu-expanded')
+  document.body.classList.add('menu-expanded')
 }
 
 function closeMenu() {
-    document.body.classList.remove('menu-expanded')
+  document.body.classList.remove('menu-expanded')
 }
 
 ScrollReveal({
-    origin: 'top',
-    distance: '30px',
-    duration: 700,
-}).reveal(´
-    #home, 
-    #home img, 
-    #home .stats, 
-    #services,
-    #about, 
-    #about header, 
-    #about .content´)
-
-
+  origin: 'top',
+  distance: '30px',
+  duration: 700,
+}).reveal(`
+  #home, 
+  #home img, 
+  #home .stats, 
+  #services,
+  #services header,
+  #services .card
+  #about, 
+  #about header, 
+  #about .content`)
